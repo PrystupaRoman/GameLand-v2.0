@@ -1,0 +1,38 @@
+// Margin bottom
+.mb-small {margin-bottom: 2rem;};
+.mb-medium {margin-bottom: 4rem;};
+.mb-large {margin-bottom: 8rem;};
+
+// heading
+%heading {
+  color: #fff;
+  font-size: 6rem;
+  text-transform: uppercase;
+}
+
+%heading-custom {
+  background-image: linear-gradient(to right, #1c92d2, #f6f2fe);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.btn {
+  border: none;
+  display: inline-block;
+  border-radius: .5rem;
+  font-weight: bold;
+  padding: 2rem 6rem;
+  transition: all .3s;
+  cursor: pointer;
+  font-family: sans-serif;
+  background-color: $color-primary-dark;
+  color: #fff;
+  font-size: 1.5rem;
+  box-shadow: 2px 2px 2px 3px rgba(0,0,0, .4);
+
+
+  &:hover {
+    transform: scaleX(1.05) scaleY(1.05);
+  }
+}

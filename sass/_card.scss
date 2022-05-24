@@ -1,0 +1,170 @@
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  width: 80%;
+  margin: 4rem auto 8rem;
+
+  @media only screen and (max-width: $bp-largest) {
+    width: 90%;
+  }
+
+  @media only screen and (max-width: $bp-large) {
+    justify-content: center;
+    column-gap: 2rem;
+    margin: 0 auto;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &::before {
+    content: 'Most popular genres';
+    font-size: 4rem;
+    text-align: center;
+    grid-column: 1 / -1;
+    margin: 7rem auto 5rem; 
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: .3rem;
+  }
+
+}
+
+
+.card {
+  perspective: 100rem;
+  position: relative;
+  height: 52rem;
+  width: 30rem;
+  
+  @media only screen and (max-width: $bp-large) {
+    width: 100%;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    margin-bottom: 8rem;
+    height: 85rem;
+  }
+
+  &__side {
+    height: 100%;
+    width: 100%;
+    transition: all 1s ease;
+    color: #fff;
+    position: absolute;
+    backface-visibility: hidden;
+    overflow: hidden;
+    box-shadow: 0.1rem 0.1rem 1rem rgb(226, 222, 222);
+
+
+    &--back {
+      background-color: rgb(209, 58, 166);
+      transform: rotateY(180deg); 
+
+      .description {
+        font-size: 1.4rem;
+        color: #fff;
+        text-align: center;
+        line-height: 2;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 3rem;
+
+        @media only screen and (max-width: $bp-small) {
+          font-size: 2rem;
+         }
+
+      }
+
+      &-1,
+      &-2,
+      &-3 {
+        background: RGB(18, 34, 70);
+      }
+    }
+  }
+
+  &:hover &__side--front{
+    transform: rotateY(-180deg) ;
+  }
+
+  &:hover &__side--back{
+    transform: rotateY(0) ;
+  }
+
+  &__picture {
+    background-size: cover;
+    height: 23rem;
+    width: 100%;
+    background-blend-mode: screen;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+
+    @media only screen and (max-width: $bp-small) {
+      height: 44em;
+    }
+
+    &--1 {
+      background-image: linear-gradient(to right, rgba($color-primary, .7), rgba($color-primary-dark, .7)), url(/img/collage/Horizon.jpg); 
+    }
+
+    &--2 {
+      background-image: linear-gradient(to right, rgba($color-primary, .7), rgba($color-primary-dark, .7)), url(/img/collage/nfs.jpg);
+    }
+
+    &--3 {
+      background-image: linear-gradient(to right, rgba($color-primary, .7), rgba($color-primary-dark, .7)), url(/img/collage/cs.jpg);
+    }
+  }
+
+  &__heading {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-top: 3rem;
+    padding-bottom: 1rem;
+    text-transform: uppercase;
+    color: $color-primary;
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 2.6rem;
+    }
+  }
+
+  &__details {
+    // padding: 3rem;
+    ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    li {
+      text-align: center;
+      font-size: 1.2rem;
+      padding: 1rem;
+      color: $color-primary;
+
+      @media only screen and (max-width: $bp-large) {
+        font-size: 1rem;
+        padding: 2rem;
+      }
+
+      @media only screen and (max-width: $bp-small) {
+        font-size: 2rem;
+      }
+
+
+      &:not(:last-child) {
+        border-bottom: 1px solid $color-grey-light-2;
+      }
+    }
+
+  }
+}

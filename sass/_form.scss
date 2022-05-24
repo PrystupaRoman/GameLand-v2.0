@@ -1,0 +1,99 @@
+.form {
+  // padding: 10rem;
+
+  &__input {
+    display: flex;
+    justify-content: center;
+    padding: 3rem;
+  }
+
+  &__container {
+    background-image: linear-gradient(to right, rgba($color-primary, .7), rgba($color-primary-dark, .7)), url(/img/collage/form-img.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 73%;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    margin: 8rem auto 0 auto;
+    border-radius: 1rem;
+
+    @media only screen and (max-width: $bp-largest) {
+      width: 90%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media only screen and (max-width: $bp-large) {
+      display: flex;
+      flex-direction: column;
+      padding: 5rem;
+      margin-bottom: 15rem;
+      text-align: center;
+    }
+  }
+
+  &__description {
+    color: #fff;
+    margin-left: 5rem;
+    align-self: center;
+    justify-self: center;
+
+    h3 {
+      font-size: 2.5rem;
+      margin-bottom: 4rem;
+
+  
+    }
+
+    p {
+      font-size: 1.5rem;
+    }
+
+    ul li {
+      list-style: none;
+      font-size: 1.4rem;
+      padding: .5rem 0;
+      text-decoration: underline;
+    }
+  }
+
+  // .form__heading
+
+  &__heading {
+    color: #fff;
+    font-size: 3rem;
+    text-align: center;
+    padding: 7rem 0 2rem 0;
+  }
+
+  // .form__input
+
+  &__input {
+    transition: all .3s;
+    // padding: 1.5rem 2rem;
+    padding: 1rem;
+    outline: none;
+    margin: 0 2rem;
+    border-radius: 3px;
+
+    &:focus {
+      border-bottom: 3px solid #55c57a;
+    }
+
+    &:focus:invalid {
+      border-bottom: 3px solid #ff7730;
+    }
+
+    @media only screen and (max-width: $bp-large) {
+      margin: 1rem ;
+    }
+  }
+
+  // .form__label
+
+  &__label {
+    display: none;
+    color: #fff;
+  }
+}

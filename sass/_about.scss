@@ -1,0 +1,123 @@
+.about {
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  padding: 10rem 0;
+
+  @media only screen and (max-width: $bp-small) {
+    margin-top: 5rem;
+  }
+
+  &__description {
+    width: 40%;
+    margin-left: 10rem;
+
+    @media only screen and (max-width: $bp-largest) {
+      margin-left: 7rem;
+    }
+
+    @media only screen and (max-width: $bp-large) {
+      width: 85%;
+    }
+  }
+
+  &__heading {
+    font-size: 5rem;
+    text-align: center;
+  }
+
+  .heading {
+
+    &__tertiary {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+
+    }
+  }
+
+  .paragraph {
+    font-size: 1.6rem;
+  }
+
+  .btn {
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .4);
+  }
+
+  .composition {
+    position: relative;
+    top: 2rem;
+
+    @media only screen and (max-width: $bp-largest) {
+      top: -7rem;
+      left: 3rem;
+    }
+
+    @media only screen and (max-width: $bp-large) {
+      display: none;
+    }
+
+    &__photo--1 {
+      width: 25%;
+      position: absolute;
+      right: 34rem;
+      bottom: 16rem;
+      transition: all .2s;
+      box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .4);
+      z-index: 5;
+      outline-offset: 2rem;
+
+      &:hover {
+        outline: 1rem solid $color-primary;
+        transform: scale(1.05) translateY(-0.5rem);
+        box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, .5);
+        z-index: 10;
+      }
+    }
+
+
+    &__photo--2 {
+      width: 25%;
+      position: absolute;
+      right: 20rem;
+      bottom: 4rem;
+      transition: all .2s;
+      box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .4);
+      z-index: 6;
+      outline-offset: 2rem;
+
+      &:hover {
+        outline: 1rem solid $color-primary;
+        transform: scale(1.05) translateY(-0.5rem);
+        box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, .5);
+        z-index: 10;
+      }
+    }
+
+
+    &__photo--3 {
+      width: 25%;
+      position: absolute;
+      right: 6rem;
+      bottom: 13rem;
+      transition: all .2s;
+      box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .4);
+      z-index: 5;
+      outline-offset: 2rem;
+
+      &:hover {
+        outline: 1rem solid $color-primary;
+        transform: scale(1.05) translateY(-0.5rem);
+        box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, .5);
+        z-index: 10;
+      }
+    }
+
+    &:hover &__photo:not(:hover) {
+      transform: scale(.95);
+    }
+
+  }
+
+}

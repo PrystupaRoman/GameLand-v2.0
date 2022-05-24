@@ -1,0 +1,116 @@
+.bg-video {
+
+  &__content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: blur(.5rem);
+
+    @media only screen and (max-width: $bp-large) {
+      display: none;
+    }
+  }
+
+}
+
+.reviews {
+  position: relative;
+
+
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    .reviews__arrow {
+      font-size: 10rem;
+      color: RGBa(18, 34, 70, .8);
+      cursor: pointer;
+      transition: all .3s ease;
+   
+
+      @media only screen and (max-width: $bp-large) {
+        padding: 1rem;
+      }
+
+      &-right {
+        margin-left:  43rem;
+      }
+
+      // ;
+
+      &-left {margin-right: 43rem;
+      }
+
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+    
+    }
+  }
+
+  &__profile {
+    width: 50%;
+    padding: 5rem;
+    line-height: 1.6;
+    background: RGBa(18, 34, 70, .9);
+    display: flex;
+    transform: skewX(-12deg);
+
+    @media only screen and (max-width: $bp-large) {
+      background-color: #132043;
+    }
+
+    &-1 {
+      position: absolute;
+    }
+
+    &-2,
+    &-3,
+    &-4 {
+      position: absolute;
+      left: -200rem;
+    }
+
+    &>* {
+      transform: skewX(12deg);
+    }
+
+    @media only screen and (max-width: $bp-largest) {
+      width: 60%;
+      padding: 2rem;
+      line-height: 2;
+      display: flex;
+      align-items: center;
+    }
+
+    @media only screen and (max-width: $bp-large) {
+      width: 80%;
+    }
+
+  }
+
+  &__img {
+    width: 11rem;
+    height: 11rem;
+    border-radius: 50%;
+    display: block;
+    shape-outside: circle(50%);
+    margin-top: 1.5rem;
+    backface-visibility: hidden;
+    object-fit: cover;
+  }
+
+  &__feedback {
+    color: #fff;
+    font-size: 1.3rem;
+    padding-left: 3rem;
+  }
+
+}
+
