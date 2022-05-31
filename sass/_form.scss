@@ -42,9 +42,8 @@
     h3 {
       font-size: 2.5rem;
       margin-bottom: 4rem;
-
-  
     }
+
 
     p {
       font-size: 1.5rem;
@@ -74,19 +73,40 @@
     // padding: 1.5rem 2rem;
     padding: 1rem;
     outline: none;
-    margin: 0 2rem;
+    margin: .5rem 2rem;
     border-radius: 3px;
 
-    &:focus {
-      border-bottom: 3px solid #55c57a;
+
+    // &:focus {
+    //   border-bottom: 3px solid #55c57a;
+    // }
+
+    // &:focus:invalid {
+    //   border-bottom: 3px solid #ff7730;
+    // }
+
+    .block__wrapper.success input {
+      border: 3px solid #55c57a;
     }
 
-    &:focus:invalid {
-      border-bottom: 3px solid #ff7730;
+    .block__wrapper.error input {
+      border: 3px solid red; ///#ff7730;
     }
+
+     .block__wrapper small {
+      font-size: 1.2rem;
+      color: red;
+      margin-left: 2rem;
+      font-weight: bold;
+      visibility: hidden;
+    }
+
+    .block__wrapper.error small {
+      visibility: visible;
+    } 
 
     @media only screen and (max-width: $bp-large) {
-      margin: 1rem ;
+      margin: 1rem;
     }
   }
 
@@ -95,5 +115,10 @@
   &__label {
     display: none;
     color: #fff;
+  }
+
+  button[type="submit"] {
+    padding: 1.5rem 5rem;
+    margin-top: .5rem;
   }
 }

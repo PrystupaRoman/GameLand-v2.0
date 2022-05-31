@@ -325,12 +325,20 @@ body {
   transition: all .3s;
   padding: 1rem;
   outline: none;
-  margin: 0 2rem;
+  margin: .5rem 2rem;
   border-radius: 3px; }
-  .form__input:focus {
-    border-bottom: 3px solid #55c57a; }
-  .form__input:focus:invalid {
-    border-bottom: 3px solid #ff7730; }
+  .form__input .block__wrapper.success input {
+    border: 3px solid #55c57a; }
+  .form__input .block__wrapper.error input {
+    border: 3px solid red; }
+  .form__input .block__wrapper small {
+    font-size: 1.2rem;
+    color: red;
+    margin-left: 2rem;
+    font-weight: bold;
+    visibility: hidden; }
+  .form__input .block__wrapper.error small {
+    visibility: visible; }
   @media only screen and (max-width: 56.25em) {
     .form__input {
       margin: 1rem; } }
@@ -338,6 +346,10 @@ body {
 .form__label {
   display: none;
   color: #fff; }
+
+.form button[type="submit"] {
+  padding: 1.5rem 5rem;
+  margin-top: .5rem; }
 
 .bg-video__content {
   position: absolute;
