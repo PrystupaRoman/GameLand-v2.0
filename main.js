@@ -12,25 +12,44 @@ active.addEventListener('click', () => {
   after.classList.toggle('active')
 })
 
-/////////// review section
 
-const leftArrow = document.querySelector('.reviews__arrow-left')
-const rightArrow = document.querySelector('.reviews__arrow-right')
-const reviewsProfiles = Array.from(document.querySelectorAll('.reviews__profile'))
-leftArrow.addEventListener('click', () => {
-  reviewsProfiles.forEach((profile, idx) => {
-    console.log(profile[0]);
-    profile.style.left = '-20rem'
+
+
+
+/////////// review section
+const leftArrow = document.querySelector('.reviews__arrow--left')
+const rightArrow = document.querySelector('.reviews__arrow--right')
+const childList = document.querySelectorAll('.reviews__profile')
+const max = childList.length - 1;
+
+let currentSlide = 0;
+
+function setActive(current) {
+  childList.forEach(item => {
+    item.classList.remove('active')
   })
+  current.classList.add('active');
+}
+
+leftArrow.addEventListener('click', () => {
+  currentSlide -= 1
+  if (currentSlide <= 0) {
+    currentSlide = max
+  }
+
+  setActive(childList[currentSlide]);
 })
 
 rightArrow.addEventListener('click', () => {
-  reviewsProfiles.forEach((profile, idx) => {
+  currentSlide += 1
+  if (currentSlide >= max) {
+    currentSlide = 0
+  }
 
-    profile.style.left = '39rem'
-
-  })
+  setActive(childList[currentSlide]);
 })
+
+
 
 
 ///// form validation ////////
@@ -86,8 +105,8 @@ function checkLength(input, min, max) {
 }
 
 function checkPasswordsMatch(input1, input2) {
-  if(input1.value !== input2.value) {
-    showError(input2, 'Passwords do not match' )
+  if (input1.value !== input2.value) {
+    showError(input2, 'Passwords do not match')
   }
 }
 

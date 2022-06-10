@@ -332,7 +332,7 @@ body {
   .form__input .block__wrapper.error input {
     border: 3px solid red; }
   .form__input .block__wrapper small {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: red;
     margin-left: 2rem;
     font-weight: bold;
@@ -363,40 +363,48 @@ body {
 
 .reviews {
   position: relative; }
-  .reviews__item {
+  .reviews__arrow {
+    font-size: 10rem;
+    color: RGBa(18, 34, 70, 0.8);
+    cursor: pointer;
+    transition: all .3s ease; }
+    @media only screen and (max-width: 56.25em) {
+      .reviews__arrow {
+        padding: 1rem; } }
+    .reviews__arrow:hover {
+      transform: scale(1.1); }
+  .reviews__items {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%; }
-    .reviews__item .reviews__arrow {
-      font-size: 10rem;
-      color: RGBa(18, 34, 70, 0.8);
-      cursor: pointer;
-      transition: all .3s ease; }
-      @media only screen and (max-width: 56.25em) {
-        .reviews__item .reviews__arrow {
-          padding: 1rem; } }
-      .reviews__item .reviews__arrow-right {
-        margin-left: 43rem; }
-      .reviews__item .reviews__arrow-left {
-        margin-right: 43rem; }
-      .reviews__item .reviews__arrow:hover {
-        transform: scale(1.1); }
-  .reviews__profile {
+  .reviews__profile-container {
     width: 50%;
+    overflow: hidden;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 250px; }
+  .reviews__profile {
+    width: 90%;
     padding: 5rem;
     line-height: 1.6;
     background: RGBa(18, 34, 70, 0.9);
     display: flex;
-    transform: skewX(-12deg); }
+    transform: skewX(-12deg);
+    flex-direction: row;
+    justify-content: center;
+    position: absolute;
+    left: -100%;
+    transition: left .5s ease-in-out; }
+    .reviews__profile.active {
+      left: 0;
+      margin: 0 auto;
+      right: 0; }
     @media only screen and (max-width: 56.25em) {
       .reviews__profile {
         background-color: #132043; } }
-    .reviews__profile-1 {
-      position: absolute; }
-    .reviews__profile-2, .reviews__profile-3, .reviews__profile-4 {
-      position: absolute;
-      left: -200rem; }
     .reviews__profile > * {
       transform: skewX(12deg); }
     @media only screen and (max-width: 75em) {
@@ -420,7 +428,7 @@ body {
     object-fit: cover; }
   .reviews__feedback {
     color: #fff;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     padding-left: 3rem; }
 
 .gallery {
