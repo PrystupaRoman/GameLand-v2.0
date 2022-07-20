@@ -33,7 +33,7 @@ function setActive(current) {
 
 leftArrow.addEventListener('click', () => {
   currentSlide -= 1
-  if (currentSlide <= 0) {
+  if (currentSlide < 0) {
     currentSlide = max
   }
 
@@ -42,7 +42,7 @@ leftArrow.addEventListener('click', () => {
 
 rightArrow.addEventListener('click', () => {
   currentSlide += 1
-  if (currentSlide >= max) {
+  if (currentSlide > max) {
     currentSlide = 0
   }
 
